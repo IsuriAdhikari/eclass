@@ -1,5 +1,6 @@
 import 'package:e_class/util/appConst.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LoginScreen extends StatefulWidget {
   final arguments;
@@ -13,6 +14,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
   }
 
   @override
@@ -183,7 +189,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     color: AppColors.color_2,
                                   ),
                                   onPressed: () => {
-                                    Navigator.pushNamed(context, "/VideoScreen")
+                                    Navigator.pushNamed(context, "/MainPage")
                                   },
                                 ),
                               ),

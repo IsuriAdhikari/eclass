@@ -1,5 +1,6 @@
 import 'package:e_class/util/appConst.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class InstituteListScreen extends StatefulWidget {
   @override
@@ -14,7 +15,10 @@ class _InstituteListScreenState extends State<InstituteListScreen> {
   void initState() {
     super.initState();
 
-    // _isLoggged();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
 
     var data = [
       {'name': 'Syzygy1', 'id': 'G001'},
@@ -49,29 +53,12 @@ class _InstituteListScreenState extends State<InstituteListScreen> {
 
   var loggingStatus = false;
 
-  _isLoggged() {
-    if (loggingStatus) {
-      // Timer(
-      //   Duration(seconds: 2), () =>
-      //   Navigator.pushNamed(context, "/MainPage")
-      //   );
-    } else {
-      // Timer(
-      //   Duration(seconds: 2), () =>
-      //   Navigator.pushNamed(context, "/LoginScreen")
-      //   );
-
-    }
-  }
-
   int dataCount = 0;
 
   List<Widget> _listOfInstitute = new List();
 
   setList(_dataListOne, _dataListTwo) async {
     int datalength = _dataListOne.length;
-
-    print(CommonData.deviceWidth);
 
     if (datalength.isOdd) {
       _dataListTwo.add({'name': 'No_Data', 'id': '0000'});
@@ -94,10 +81,10 @@ class _InstituteListScreenState extends State<InstituteListScreen> {
                     : Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: AppColors.color_4,
+                            color: AppColors.white,
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black45,
+                                  color: Colors.black12,
                                   offset: Offset(0, -1),
                                   blurRadius: 8)
                             ]),
@@ -173,10 +160,10 @@ class _InstituteListScreenState extends State<InstituteListScreen> {
                     : Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: AppColors.color_4,
+                            color: AppColors.white,
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black45,
+                                  color: Colors.black12,
                                   offset: Offset(0, -1),
                                   blurRadius: 8)
                             ]),
@@ -254,7 +241,7 @@ class _InstituteListScreenState extends State<InstituteListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: AppColors.color_5,
+        color: AppColors.white,
         child: Container(
           width: CommonData.deviceWidth,
           child: Column(

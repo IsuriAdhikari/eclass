@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppTerms {
   // TERMS
-  static const String projectName = "LK Lottery";
-  static const String projectDescription = "Lottery Result.";
+  static const String projectName = "E class";
+  static const String projectDescription = "E class";
 }
 
 class AppStyles {
@@ -53,10 +53,7 @@ class AppColors {
   static const form_border = const Color(0xFF808080);
 }
 
-enum RoutingData { Home, Result, Jackpots, Info }
-
 class CommonData {
   static var deviceWidth = 0.0;
   static var deviceHeight = 0.0;
-  static var language = "en_US";
 }

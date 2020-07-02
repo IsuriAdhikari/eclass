@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
           )),
       onGenerateRoute: (settings) => setRoute(settings),
       debugShowCheckedModeBanner: false,
-      // home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

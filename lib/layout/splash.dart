@@ -1,5 +1,6 @@
 import 'package:e_class/util/appConst.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,11 +11,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
   }
 
   @override
   Widget build(BuildContext context) {
     CommonData.deviceWidth = MediaQuery.of(context).size.width;
+    CommonData.deviceHeight = MediaQuery.of(context).size.height;
 
     return MediaQuery(
       data: MediaQueryData(),
